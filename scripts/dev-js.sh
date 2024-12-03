@@ -7,6 +7,7 @@ curl https://get.volta.sh | bash
 source ~/.profile
 
 echo "\n\nBUN & PNPM ======================================\n"
+volta install node
 volta install bun
 volta install pnpm
 
