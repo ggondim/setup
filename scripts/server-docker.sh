@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "\n\nDOCKER ======================================\n"
 # Add Docker's official GPG key:
 sudo apt update
 sudo apt install ca-certificates curl
@@ -16,14 +17,17 @@ echo \
 # Install Docker
 sudo apt update && sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin && sudo docker run hello-world
 
+echo "\n\nDOCKER GROUP ======================================\n"
 # Add user to docker group
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
+echo "\n\nLAZYDOCKER ======================================\n"
 # lazydocker
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 echo "alias lzd='lazydocker'" >> ~/.profile && source ~/.profile
 
+echo "\n\nDOCKER NETWORK LOCAL-INTERNAL ======================================\n"
 # setup an internal network
 docker network create local-internal
 
