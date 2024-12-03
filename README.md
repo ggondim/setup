@@ -21,6 +21,8 @@ chmod +x setup.sh
 
 Just opt-in for the desired scripts when prompted.
 
+![screenshot](https://github.com/user-attachments/assets/2a28f4ef-3ee6-4aa4-a39b-55fe828df820)
+
 ## Scripts
 
 ### Shell
