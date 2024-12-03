@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # volta
-echo "\n\nVOLTA ======================================\n"
+echo -e "\n\nVOLTA ======================================\n"
 curl https://get.volta.sh | bash
 
 source ~/.profile
 
-echo "\n\nBUN & PNPM ======================================\n"
+echo -e "\n\nBUN & PNPM ======================================\n"
 volta install node
 volta install bun
 volta install pnpm

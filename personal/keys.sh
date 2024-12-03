@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "\n\nKEYS ======================================\n"
+echo -e "\n\nKEYS ======================================\n"
 if ! command -v gpg &> /dev/null; then
     sudo apt update && sudo apt install -y gnupg
 fi

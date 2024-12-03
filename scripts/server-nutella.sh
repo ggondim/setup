@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # fastfetch
-echo "\n\nFASTFETCH ======================================\n"
+echo -e "\n\nFASTFETCH ======================================\n"
 sudo apt install fastfetch -y
 echo -e "#!/bin/bash\n/usr/bin/fastfetch" > /etc/update-motd.d/02-fastfetch
 sudo chmod 755 /etc/update-motd.d/02-fastfetch

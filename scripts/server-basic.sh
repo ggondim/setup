@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "\n\nUNMINIMIZE ======================================\n"
+echo -e "\n\nUNMINIMIZE ======================================\n"
 sudo unminimize -y
 
 sudo apt update
