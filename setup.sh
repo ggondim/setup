@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# check if dialog is installed
+if ! command -v dialog &> /dev/null; then
+    sudo apt install dialog -y
+fi
+
 # Directory containing the scripts
 SCRIPT_DIR="./scripts"
 
