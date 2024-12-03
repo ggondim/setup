@@ -22,6 +22,8 @@ selected=$(dialog --title "Script Selection" --checklist \
 "Check the scripts you want to execute:" 20 70 15 \
 "${options[@]}" 3>&1 1>&2 2>&3)
 
+clear
+
 # Check if something was selected
 if [[ $? -eq 0 ]]; then
     # Convert the list of selected indices to an array
@@ -30,12 +32,10 @@ if [[ $? -eq 0 ]]; then
     # Execute the selected scripts
     for index in "${selected_indices[@]}"; do
         script="${scripts[$index]}"
-        clear
         echo "Executing $script..."
         bash "$script"
     done
 
-    clear
 else
     echo "No script selected."
 fi
