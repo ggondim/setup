@@ -7,6 +7,8 @@ fi
 
 git clone https://github.com/ggondim/setup.git ~/setup
 
-chmod +x ./setup/setup.sh
+cd ~/setup
 
-bash ./setup/setup.sh
+chmod +x ./setup.sh
+
+bash ./setup.sh
