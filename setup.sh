@@ -1,36 +1,36 @@
 #!/bin/bash
 
-# Diretório contendo os scripts
-SCRIPT_DIR="./"
+# Directory containing the scripts
+SCRIPT_DIR="./scripts"
 
-# Gera a lista de scripts disponíveis no diretório
+# Generate the list of available scripts in the directory
 scripts=($(ls "$SCRIPT_DIR"/*.sh))
 
-# Cria uma string com os scripts para o Dialog
+# Create a string with the scripts for the Dialog
 options=()
 for i in "${!scripts[@]}"; do
     options+=($i "${scripts[$i]}" "OFF")
 done
 
-# Exibe o menu de checkboxes
-selected=$(dialog --title "Seleção de Scripts" --checklist \
-"Marque os scripts que deseja executar:" 20 70 15 \
+# Display the checkbox menu
+selected=$(dialog --title "Script Selection" --checklist \
+"Check the scripts you want to execute:" 20 70 15 \
 "${options[@]}" 3>&1 1>&2 2>&3)
 
-# Verifica se algo foi selecionado
+# Check if something was selected
 if [[ $? -eq 0 ]]; then
-    # Converte a lista de índices selecionados para um array
+    # Convert the list of selected indices to an array
     selected_indices=($(echo $selected | tr -d "\""))
 
-    # Executa os scripts selecionados
+    # Execute the selected scripts
     for index in "${selected_indices[@]}"; do
         script="${scripts[$index]}"
         clear
-        echo "Executando $script..."
+        echo "Executing $script..."
         bash "$script"
     done
 
     clear
 else
-    echo "Nenhum script selecionado."
+    echo "No script selected."
 fi
