@@ -5,7 +5,7 @@ A collection of Linux setup scripts for my own
 ## Usage (from curl)
 
 ```bash
-curl -Ls https://bit.ly/ggondim-setup | bash
+curl -fsSL https://bit.ly/ggondim-setup | bash
 ```
 
 ## Usage (from repo)
@@ -21,24 +21,13 @@ chmod +x setup.sh
 
 Just opt-in for the desired scripts when prompted.
 
-![screenshot](https://github.com/user-attachments/assets/2a28f4ef-3ee6-4aa4-a39b-55fe828df820)
+#### Generic scripts
 
-## Scripts
-
-### Shell
-
-- `shell-basic.sh` - APT upgrade + build-essential, curl, wget, git, vim
-- `shell-nutella.sh` - lsd, btop, superfile
-
-### Desktop
-
-- `desktop-software.sh` - Enpass, Parsec, Chrome, VSCode Insiders, Surfshark
-- `desktop-nutella.sh` - Nerd Fonts (interactive install)
-
-### Development
-
-- `dev-js.sh` - Volta.sh, bun, pnpm
-
-### Server
-
-[TO-DO]
+- `unminimize`: Unminimize Ubuntu server.
+- `basics`: Install basic packages like `build-essential`, `git`, `curl`, `wget`, and `vim`.
+- `git-configs`: Set up Git configurations like default branch and follow tags.
+- `shell-nutella`: Install shell utilities like `fastfetch`, `lsd`, `btop`, and `superfile`.
+- `docker`: Install Docker and Docker Compose.
+- `dev-js`: Set up JavaScript development environment with `volta`, `node`, `bun`, and `pnpm`.
+- `nerd-fonts`: Install Nerd Fonts for better terminal aesthetics.
+- `personal-software`: Install personal software like Enpass, Parsec, Chrome, VSCode, and Surfshark.
