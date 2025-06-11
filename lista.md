@@ -1,8 +1,0 @@
-- [x] unminimize
-- [x] basics (build-essential, git, curl, wget, vim)
-- [x] git configs (default branch, followTags)
-- [x] shell nutella (fastfetch, lsd, btop, superfile)
-- [x] docker
-- [x] dev-js (volta, node, bun, pnpm)
-- [x] [desktop] nerd fonts
-- [x] [desktop] personal software (enpass, parsec, chrome, vscode, surfshark)
