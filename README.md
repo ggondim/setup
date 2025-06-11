@@ -8,6 +8,8 @@ A collection of Linux setup scripts for my own
 curl -fsSL https://bit.ly/ggondim-setup | bash
 ```
 
+_If curl is not present, make sure to `sudo apt install curl`._
+
 ## Usage (from repo)
 
 ```bash
