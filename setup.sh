@@ -1,8 +1,8 @@
 #!/bin/bash
 
-options=("unminimize" "basics (build-essential, git, curl, wget, vim)" "git configs (default branch, followTags)" "shell nutella (fastfetch, lsd, btop, superfile)" "docker" "dev-js (volta, node, bun, pnpm)" "[desktop] nerd fonts" "[desktop] personal software (enpass, parsec, chrome, vscode, surfshark)")
-values=("01-unminimize" "02-basics" "03-git" "04-shell" "05-docker" "06-dev-js" "07-desltop-nutella" "08-desktop-software")
-selected=(0 0 0 0 0 0 0 0)
+options=("apt update", "unminimize" "basics (build-essential, git, curl, wget, vim)" "git configs (default branch, followTags)" "shell nutella (fastfetch, lsd, btop, superfile)" "docker" "dev-js (volta, node, bun, pnpm)" "[desktop] nerd fonts" "[desktop] personal software (enpass, parsec, chrome, vscode, surfshark)", "apt upgrade & cleanup")
+values=("00-update" "01-unminimize" "02-basics" "03-git" "04-shell" "05-docker" "06-dev-js" "07-desltop-nutella" "08-desktop-software" "99-upgrade")
+selected=(0 0 0 0 0 0 0 0 0 0)
 cursor=0
 
 enable_raw_mode() {
@@ -72,12 +72,8 @@ disable_raw_mode
 tput cnorm
 echo -e "\n\n"
 
-sudo apt update -y
-
 echo "Executando selecionados..."
 for i in "${!options[@]}"; do
   [[ ${selected[$i]} -eq 1 ]] && echo "EXECUTANDO ${options[$i]} (${values[$i]})"
   [[ ${selected[$i]} -eq 1 ]] && bash "./sh/${values[$i]}.sh"
 done
-
-sudo apt upgrade -y
