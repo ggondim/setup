@@ -6,11 +6,18 @@ selected=(0 0 0 0 0 0 0 0)
 cursor=0
 
 enable_raw_mode() {
-  stty -echo -icanon time 0 min 0
+  if stty -F /dev/tty -echo -icanon time 0 min 0 2>/dev/null; then
+    return
+  elif stty -echo -icanon time 0 min 0 </dev/tty 2>/dev/null; then
+    return
+  else
+    echo "Terminal não suporta modo raw. Saindo." >&2
+    exit 1
+  fi
 }
 
 disable_raw_mode() {
-  stty sane
+  stty -F /dev/tty sane 2>/dev/null || stty sane </dev/tty 2>/dev/null
 }
 
 trap "disable_raw_mode; tput cnorm; echo -e '\n\n'; exit" INT TERM EXIT
@@ -30,11 +37,11 @@ print_menu() {
 }
 
 read_input() {
-  IFS= read -rsn1 key
+  IFS= read -rsn1 key </dev/tty
 
   if [[ $key == $'\x1b' ]]; then
-    read -rsn1 key2
-    read -rsn1 key3
+    read -rsn1 key2 </dev/tty
+    read -rsn1 key3 </dev/tty
     key+="$key2$key3"
 
     case "$key" in
